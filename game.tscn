@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" path="res://game.gd" id="1_dny5l"]
 [ext_resource type="PackedScene" uid="uid://c7qbx2pcnae6e" path="res://modules/player/player.tscn" id="2_06lvx"]
-[ext_resource type="Shader" path="res://sky.gdshader" id="3_art5k"]
-[ext_resource type="PackedScene" uid="uid://ccsl5hde7wjlc" path="res://modules/level/blend_ground.blend" id="4_3h6h3"]
+[ext_resource type="Shader" path="res://modules/environment/sky.gdshader" id="3_art5k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mi6nc"]
 shader = ExtResource("3_art5k")
@@ -44,6 +43,9 @@ radiance_size = 0
 background_mode = 2
 sky = SubResource("Sky_3leux")
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_5miq7"]
+size = Vector2(50, 50)
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_dny5l")
 
@@ -65,6 +67,5 @@ current = true
 
 [node name="World" type="Node3D" parent="."]
 
-[node name="blend_ground" parent="World" instance=ExtResource("4_3h6h3")]
-
-[editable path="World/blend_ground"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
+mesh = SubResource("PlaneMesh_5miq7")
