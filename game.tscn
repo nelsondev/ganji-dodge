@@ -1,9 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://dh00b7ynct2hj"]
+[gd_scene load_steps=15 format=3 uid="uid://dh00b7ynct2hj"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_dny5l"]
 [ext_resource type="PackedScene" uid="uid://c7qbx2pcnae6e" path="res://modules/player/player.tscn" id="2_06lvx"]
 [ext_resource type="Shader" path="res://modules/environment/sky.gdshader" id="3_art5k"]
 [ext_resource type="Material" uid="uid://b6476iaw6alvl" path="res://modules/level/mat_placeholder.tres" id="4_mx70p"]
+[ext_resource type="PackedScene" uid="uid://di1uhvjfoxmic" path="res://modules/deathball/deathball.tscn" id="5_3ny2x"]
+[ext_resource type="PackedScene" uid="uid://b51nkc7hv34fk" path="res://modules/testing/fake_player.tscn" id="6_tgqwy"]
+[ext_resource type="Script" path="res://modules/testing/Camera3D.gd" id="7_0qa81"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mi6nc"]
 shader = ExtResource("3_art5k")
@@ -85,18 +88,8 @@ mesh = SubResource("PlaneMesh_5miq7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Ground/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_6lmao")
 
-[node name="Box" type="MeshInstance3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -6)
-material_override = ExtResource("4_mx70p")
-mesh = SubResource("BoxMesh_ep6kv")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Box"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Box/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_fk43y")
-
 [node name="Box2" type="MeshInstance3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -6)
 material_override = ExtResource("4_mx70p")
 mesh = SubResource("BoxMesh_ep6kv")
 
@@ -106,7 +99,7 @@ mesh = SubResource("BoxMesh_ep6kv")
 shape = SubResource("ConcavePolygonShape3D_fk43y")
 
 [node name="Box3" type="MeshInstance3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -6)
 material_override = ExtResource("4_mx70p")
 mesh = SubResource("BoxMesh_ep6kv")
 
@@ -115,32 +108,22 @@ mesh = SubResource("BoxMesh_ep6kv")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Box3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_fk43y")
 
-[node name="Box4" type="MeshInstance3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6)
-material_override = ExtResource("4_mx70p")
-mesh = SubResource("BoxMesh_ep6kv")
+[node name="Game" type="Node3D" parent="."]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Box4"]
+[node name="Deathball" parent="Game" instance=ExtResource("5_3ny2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -6)
+collision_layer = 3
+collision_mask = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Box4/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_fk43y")
+[node name="Players" type="Node3D" parent="Game"]
 
-[node name="Box5" type="MeshInstance3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 6)
-material_override = ExtResource("4_mx70p")
-mesh = SubResource("BoxMesh_ep6kv")
+[node name="FakePlayer" parent="Game/Players" instance=ExtResource("6_tgqwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -6)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Box5"]
+[node name="FakePlayer2" parent="Game/Players" instance=ExtResource("6_tgqwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, -6)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Box5/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_fk43y")
-
-[node name="Box6" type="MeshInstance3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
-material_override = ExtResource("4_mx70p")
-mesh = SubResource("BoxMesh_ep6kv")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Box6"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Box6/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_fk43y")
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 4)
+current = true
+script = ExtResource("7_0qa81")

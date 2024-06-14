@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://di1uhvjfoxmic"]
+
+[ext_resource type="Script" path="res://modules/deathball/deathball.gd" id="1_d6r2a"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_846cv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mn47h"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.729412)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ge40f"]
+
+[node name="Deathball" type="RigidBody3D"]
+disable_mode = 1
+collision_layer = 2
+collision_mask = 2
+mass = 0.01
+gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_d6r2a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_846cv")
+
+[node name="REPLACE_THIS_Ball" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_mn47h")
+mesh = SubResource("SphereMesh_ge40f")

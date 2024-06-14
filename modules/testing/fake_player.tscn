@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b51nkc7hv34fk"]
+
+[ext_resource type="Script" path="res://modules/testing/fake_player.gd" id="1_6vy8b"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tmyyi"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ihx7i"]
+
+[node name="FakePlayer" type="Area3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_6vy8b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_tmyyi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_ihx7i")
