@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7qbx2pcnae6e"]
+
+[ext_resource type="Script" path="res://modules/player/player.gd" id="1_7cmav"]
+
+[node name="Player" type="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_7cmav")
+
+[node name="XRCamera" type="XRCamera3D" parent="."]
+
+[node name="XRLeftHand" type="XRController3D" parent="."]
+tracker = &"left_hand"
+
+[node name="XRRightHand" type="XRController3D" parent="."]
+tracker = &"right_hand"
