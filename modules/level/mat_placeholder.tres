@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bucrjvjeitumf" path="res://modules/level/tex_placeholder.png" id="1_cytmy"]
 
 [resource]
+transparency = 1
 albedo_texture = ExtResource("1_cytmy")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true

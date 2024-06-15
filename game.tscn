@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dh00b7ynct2hj"]
+[gd_scene load_steps=17 format=3 uid="uid://dh00b7ynct2hj"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_dny5l"]
 [ext_resource type="PackedScene" uid="uid://c7qbx2pcnae6e" path="res://modules/player/player.tscn" id="2_06lvx"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://di1uhvjfoxmic" path="res://modules/deathball/deathball.tscn" id="5_3ny2x"]
 [ext_resource type="PackedScene" uid="uid://b51nkc7hv34fk" path="res://modules/testing/fake_player.tscn" id="6_tgqwy"]
 [ext_resource type="Script" path="res://modules/testing/Camera3D.gd" id="7_0qa81"]
+[ext_resource type="Script" path="res://modules/multiplayer/Server.gd" id="8_dhial"]
+[ext_resource type="PackedScene" uid="uid://d0khktavtb05" path="res://modules/level/stone.blend" id="9_c7ucl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mi6nc"]
 shader = ExtResource("3_art5k")
@@ -127,3 +129,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, -6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 4)
 current = true
 script = ExtResource("7_0qa81")
+
+[node name="Server" type="Node3D" parent="."]
+script = ExtResource("8_dhial")
+
+[node name="stone" parent="." instance=ExtResource("9_c7ucl")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0, 0, 6)
+
+[node name="stone2" parent="." instance=ExtResource("9_c7ucl")]
+transform = Transform3D(-1.13133e-08, 0.258819, 0.965926, -1, -4.37114e-08, 0, 4.2222e-08, -0.965926, 0.258819, -5, 1, 6)
