@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7qbx2pcnae6e"]
+[gd_scene load_steps=4 format=3 uid="uid://c7qbx2pcnae6e"]
 
 [ext_resource type="Script" path="res://modules/player/player.gd" id="1_7cmav"]
+[ext_resource type="PackedScene" uid="uid://cam0c78k20tji" path="res://modules/player/Player Model/mesh.tscn" id="2_tcgr1"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_be2wh"]
 radius = 0.167
@@ -22,3 +23,6 @@ tracker = &"right_hand"
 
 [node name="REPLACE_THIS_HANDMODEL" type="MeshInstance3D" parent="XRRightHand"]
 mesh = SubResource("SphereMesh_be2wh")
+
+[node name="Mesh" parent="." instance=ExtResource("2_tcgr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39359, 0)

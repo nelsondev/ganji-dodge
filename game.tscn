@@ -1,54 +1,32 @@
-[gd_scene load_steps=18 format=3 uid="uid://dh00b7ynct2hj"]
+[gd_scene load_steps=16 format=3 uid="uid://dh00b7ynct2hj"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_dny5l"]
 [ext_resource type="PackedScene" uid="uid://c7qbx2pcnae6e" path="res://modules/player/player.tscn" id="2_06lvx"]
-[ext_resource type="Shader" path="res://modules/environment/sky.gdshader" id="3_art5k"]
 [ext_resource type="Material" uid="uid://b6476iaw6alvl" path="res://modules/level/mat_placeholder.tres" id="4_mx70p"]
 [ext_resource type="PackedScene" uid="uid://cjixesvevcfak" path="res://modules/level/stone.glb" id="5_0hxgq"]
 [ext_resource type="PackedScene" uid="uid://di1uhvjfoxmic" path="res://modules/deathball/deathball.tscn" id="5_3ny2x"]
 [ext_resource type="PackedScene" uid="uid://b51nkc7hv34fk" path="res://modules/testing/fake_player.tscn" id="6_tgqwy"]
 [ext_resource type="Script" path="res://modules/testing/Camera3D.gd" id="7_0qa81"]
 [ext_resource type="Script" path="res://modules/multiplayer/Server.gd" id="8_dhial"]
-[ext_resource type="PackedScene" uid="uid://dhfnx6t2y4uj7" path="res://modules/player/Player Model/Ozzy_low.fbx" id="10_5j2cj"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mi6nc"]
-shader = ExtResource("3_art5k")
-shader_parameter/day_top_color = Color(0.1, 0.6, 1, 1)
-shader_parameter/day_bottom_color = Color(0.4, 0.8, 1, 1)
-shader_parameter/sunset_top_color = Color(0.7, 0.75, 1, 1)
-shader_parameter/sunset_bottom_color = Color(1, 0.5, 0.7, 1)
-shader_parameter/night_top_color = Color(0.02, 0, 0.04, 1)
-shader_parameter/night_bottom_color = Color(0.1, 0, 0.2, 1)
-shader_parameter/horizon_color = Color(1, 0.627451, 0.470588, 1)
-shader_parameter/horizon_blur = 0.0
-shader_parameter/sun_color = Color(10, 8, 1, 1)
-shader_parameter/sun_sunset_color = Color(10, 0, 0, 1)
-shader_parameter/sun_size = 0.01
-shader_parameter/sun_blur = 0.01
-shader_parameter/moon_color = Color(1, 0.95, 0.7, 1)
-shader_parameter/moon_size = 0.01
-shader_parameter/moon_blur = 0.01
-shader_parameter/clouds_edge_color = Color(0.8, 0.8, 0.98, 1)
-shader_parameter/clouds_top_color = Color(1, 1, 1, 1)
-shader_parameter/clouds_middle_color = Color(0.92, 0.92, 0.98, 1)
-shader_parameter/clouds_bottom_color = Color(0.83, 0.83, 0.94, 1)
-shader_parameter/clouds_speed = 1.56
-shader_parameter/clouds_direction = 0.2
-shader_parameter/clouds_scale = 2.19
-shader_parameter/clouds_cutoff = 0.33
-shader_parameter/clouds_fuzziness = 0.55
-shader_parameter/clouds_weight = 0.0
-shader_parameter/clouds_blur = 0.36
-shader_parameter/stars_speed = 1.0
-shader_parameter/overwritten_time = 0.0
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j4s5o"]
+sky_top_color = Color(0.448499, 0.708443, 1, 1)
+sky_horizon_color = Color(0.492522, 0.6682, 0.883363, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Sky" id="Sky_3leux"]
-sky_material = SubResource("ShaderMaterial_mi6nc")
-radiance_size = 0
+[sub_resource type="Sky" id="Sky_jsh0f"]
+sky_material = SubResource("ProceduralSkyMaterial_j4s5o")
 
 [sub_resource type="Environment" id="Environment_e45i6"]
 background_mode = 2
-sky = SubResource("Sky_3leux")
+sky = SubResource("Sky_jsh0f")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 3
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5miq7"]
 size = Vector2(50, 50)
@@ -70,11 +48,8 @@ environment = SubResource("Environment_e45i6")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.484949, 0.60501, -0.631496, 0.872073, -0.38877, 0.297232, -0.0656786, -0.694853, -0.716147, 0, 5.08808, 0)
-light_color = Color(0.842296, 0.714378, 0.552312, 1)
 shadow_enabled = true
-directional_shadow_split_1 = 0.089
-directional_shadow_split_2 = 0.148
-directional_shadow_split_3 = 0.578
+directional_shadow_mode = 0
 directional_shadow_blend_splits = true
 
 [node name="Player" parent="." instance=ExtResource("2_06lvx")]
@@ -139,6 +114,3 @@ script = ExtResource("7_0qa81")
 
 [node name="Server" type="Node3D" parent="."]
 script = ExtResource("8_dhial")
-
-[node name="Root Scene" parent="." instance=ExtResource("10_5j2cj")]
-transform = Transform3D(-0.461176, 0, -0.887309, 0, 1, 0, 0.887309, 0, -0.461176, 2.64839, 1.47826, -3.33951)

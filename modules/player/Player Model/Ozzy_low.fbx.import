@@ -13,8 +13,8 @@ dest_files=["res://.godot/imported/Ozzy_low.fbx-d61fa0c95c4f867fd52105b60f70728e
 
 [params]
 
-nodes/root_type=""
-nodes/root_name=""
+nodes/root_type="Node3D"
+nodes/root_name="Mesh"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true
@@ -31,11 +31,11 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "materials": {
-"lambert1": {
+"lambert2": {
 "use_external/enabled": true,
 "use_external/path": "res://modules/player/Player Model/Ozzy_mat.tres"
 }
 }
 }
 gltf/naming_version=1
-gltf/embedded_image_handling=1
+gltf/embedded_image_handling=3
