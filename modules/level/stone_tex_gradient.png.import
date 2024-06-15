@@ -2,16 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dywdvp6iq5nb2"
-path="res://.godot/imported/tex_gradient.png-0b64d0e122f4d9348e37b2bd12979f46.ctex"
+uid="uid://kgavdyr4ap0h"
+path="res://.godot/imported/stone_tex_gradient.png-8412d0afbaf91e0c34da1b44bca03c63.ctex"
 metadata={
 "vram_texture": false
+}
+generator_parameters={
+"md5": "5546895e366148d33e3a9f7db6e506b8"
 }
 
 [deps]
 
-source_file="res://modules/level/tex_gradient.png"
-dest_files=["res://.godot/imported/tex_gradient.png-0b64d0e122f4d9348e37b2bd12979f46.ctex"]
+source_file="res://modules/level/stone_tex_gradient.png"
+dest_files=["res://.godot/imported/stone_tex_gradient.png-8412d0afbaf91e0c34da1b44bca03c63.ctex"]
 
 [params]
 
