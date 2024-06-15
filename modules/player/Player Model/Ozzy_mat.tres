@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://2ucyx2lis0ft"]
+
+[ext_resource type="Texture2D" uid="uid://c6x8t3k5m6bgw" path="res://modules/player/Player Model/Ozzy_low_lambert1_BaseColor.1001.jpg" id="1_470l4"]
+[ext_resource type="Texture2D" uid="uid://lk1xqidwd68v" path="res://modules/player/Player Model/Ozzy_low_lambert1_Normal.1001.jpg" id="2_7dqc5"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_470l4")
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("2_7dqc5")

@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://7jpowah7odde"
+path.s3tc="res://.godot/imported/Ozzy_low-d61fa0c95c4f867fd52105b60f70728e_Ozzy_low_lambert1_BaseColor.1001.jpg-466d9c57ee2c76713b1c2393d26ff907.s3tc.ctex"
+path.etc2="res://.godot/imported/Ozzy_low-d61fa0c95c4f867fd52105b60f70728e_Ozzy_low_lambert1_BaseColor.1001.jpg-466d9c57ee2c76713b1c2393d26ff907.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "7e8f68240a82adc2a191f1b42b35b115"
+}
+
+[deps]
+
+source_file="res://modules/player/Player Model/Ozzy_low-d61fa0c95c4f867fd52105b60f70728e_Ozzy_low_lambert1_BaseColor.1001.jpg"
+dest_files=["res://.godot/imported/Ozzy_low-d61fa0c95c4f867fd52105b60f70728e_Ozzy_low_lambert1_BaseColor.1001.jpg-466d9c57ee2c76713b1c2393d26ff907.s3tc.ctex", "res://.godot/imported/Ozzy_low-d61fa0c95c4f867fd52105b60f70728e_Ozzy_low_lambert1_BaseColor.1001.jpg-466d9c57ee2c76713b1c2393d26ff907.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

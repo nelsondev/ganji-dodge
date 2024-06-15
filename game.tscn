@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dh00b7ynct2hj"]
+[gd_scene load_steps=18 format=3 uid="uid://dh00b7ynct2hj"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_dny5l"]
 [ext_resource type="PackedScene" uid="uid://c7qbx2pcnae6e" path="res://modules/player/player.tscn" id="2_06lvx"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b51nkc7hv34fk" path="res://modules/testing/fake_player.tscn" id="6_tgqwy"]
 [ext_resource type="Script" path="res://modules/testing/Camera3D.gd" id="7_0qa81"]
 [ext_resource type="Script" path="res://modules/multiplayer/Server.gd" id="8_dhial"]
+[ext_resource type="PackedScene" uid="uid://dhfnx6t2y4uj7" path="res://modules/player/Player Model/Ozzy_low.fbx" id="10_5j2cj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mi6nc"]
 shader = ExtResource("3_art5k")
@@ -138,3 +139,6 @@ script = ExtResource("7_0qa81")
 
 [node name="Server" type="Node3D" parent="."]
 script = ExtResource("8_dhial")
+
+[node name="Root Scene" parent="." instance=ExtResource("10_5j2cj")]
+transform = Transform3D(-0.461176, 0, -0.887309, 0, 1, 0, 0.887309, 0, -0.461176, 2.64839, 1.47826, -3.33951)
