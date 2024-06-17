@@ -1,0 +1,9 @@
+extends Node
+
+func get_game_node(path: NodePath): return get_tree().root.get_node("Node3D").get_node(path)
+func get_player(): return get_game_node("Player") as Player
+func get_player_node(path: NodePath): return get_player().get_node(path)
+func get_players(): return get_game_node("Players") as Node3D
+func get_dummy(path: NodePath): return get_players().get_node(path) as PlayerDummy
+func get_left_controller(): return get_player_node("XRLeftHand") as XRController3D
+func get_right_controller(): return get_player_node("XRRightHand") as XRController3D

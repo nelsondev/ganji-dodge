@@ -11,12 +11,18 @@ config_version=5
 [application]
 
 config/name="ganji-server"
+run/main_scene="res://node.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Server="*res://server.gd"
+Client="*res://client.gd"
+
+[physics]
+
+common/physics_ticks_per_second=30
 
 [rendering]
 

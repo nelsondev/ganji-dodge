@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b62bsvxa76s4v"]
+
+[ext_resource type="PackedScene" uid="uid://di1uhvjfoxmic" path="res://modules/deathball/deathball.tscn" id="1_euin4"]
+[ext_resource type="PackedScene" uid="uid://b51nkc7hv34fk" path="res://modules/testing/fake_player.tscn" id="2_lpg25"]
+
+[node name="Game" type="Node3D"]
+
+[node name="Deathball" parent="." instance=ExtResource("1_euin4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -6)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Players" type="Node3D" parent="."]
+
+[node name="FakePlayer" parent="Players" instance=ExtResource("2_lpg25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -6)
+
+[node name="FakePlayer2" parent="Players" instance=ExtResource("2_lpg25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, -6)

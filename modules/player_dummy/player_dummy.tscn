@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccce2l2e6llf3"]
+
+[ext_resource type="PackedScene" uid="uid://cam0c78k20tji" path="res://modules/player/Player Model/mesh.tscn" id="1_021r0"]
+[ext_resource type="Script" path="res://modules/player_dummy/player_dummy.gd" id="1_hq68t"]
+
+[node name="PlayerDummy" type="Node3D"]
+script = ExtResource("1_hq68t")
+
+[node name="Mesh" parent="." instance=ExtResource("1_021r0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0628643, 0.98325, 0.00121927)

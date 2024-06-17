@@ -1,3 +1,4 @@
-extends Node3D
+extends Node
 
-var server = WebSocketPeer.new()
+@rpc("any_peer", "unreliable_ordered", "call_remote")
+func _sync(_data): pass
