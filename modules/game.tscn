@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://dh00b7ynct2hj"]
+[gd_scene load_steps=26 format=4 uid="uid://dh00b7ynct2hj"]
 
 [ext_resource type="PackedScene" uid="uid://c7qbx2pcnae6e" path="res://modules/player/player.tscn" id="2_06lvx"]
 [ext_resource type="LightmapGIData" uid="uid://cr26i0vq2y1ra" path="res://lightmap.lmbake" id="2_dgbn0"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bhlmkwdr34o3i" path="res://modules/world/stone_large.gltf" id="6_p5u7y"]
 [ext_resource type="Script" path="res://modules/testing/Camera3D.gd" id="7_0qa81"]
 [ext_resource type="PackedScene" uid="uid://73ighk4dbvyc" path="res://modules/world/barrel.gltf" id="7_34rve"]
+[ext_resource type="PackedScene" uid="uid://ml2w4ensg2ex" path="res://modules/world/Rocks/Rock_low.fbx" id="8_ffqv0"]
 [ext_resource type="Texture2D" uid="uid://bmgnuo38p3od8" path="res://modules/world/textures/stone_gradient_1.png" id="10_5cyj7"]
 [ext_resource type="PackedScene" uid="uid://bkd7eiw7jt5b3" path="res://modules/world/fence_post_1.gltf" id="10_rjgl5"]
 [ext_resource type="PackedScene" uid="uid://pgx02wqxa1cl" path="res://modules/world/stone_small.gltf" id="11_7v04s"]
@@ -151,12 +152,14 @@ light_bake_mode = 1
 directional_shadow_blend_splits = true
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
+visible = false
+bounces = 4
 bounce_indirect_energy = 2.0
 directional = true
 denoiser_strength = 0.25
 bias = 0.0001
-texel_scale = 2.0
-generate_probes_subdiv = 1
+texel_scale = 4.0
+generate_probes_subdiv = 0
 light_data = ExtResource("2_dgbn0")
 
 [node name="Player" parent="." instance=ExtResource("2_06lvx")]
@@ -192,19 +195,19 @@ transform = Transform3D(0.47806, -0.126321, -0.0741711, -9.81033e-09, 0.253167, 
 
 [node name="Bushes" type="Node3D" parent="World"]
 
-[node name="plant_small_1" type="Node3D" parent="World/Bushes" instance=ExtResource("6_c5ci4")]
+[node name="plant_small_1" parent="World/Bushes" instance=ExtResource("6_c5ci4")]
 transform = Transform3D(0.49136, 0, 0.870957, 0, 1, 0, -0.870957, 0, 0.49136, -2.57172, 0, -26.4916)
 
-[node name="plant_small_3" type="Node3D" parent="World/Bushes" instance=ExtResource("6_c5ci4")]
+[node name="plant_small_3" parent="World/Bushes" instance=ExtResource("6_c5ci4")]
 transform = Transform3D(0.670706, 0, 1.18886, -0.336778, 1.30909, 0.189997, -1.14016, -0.386676, 0.643232, 9.97537, 0, -27.1912)
 
-[node name="plant_small_4" type="Node3D" parent="World/Bushes" instance=ExtResource("6_c5ci4")]
+[node name="plant_small_4" parent="World/Bushes" instance=ExtResource("6_c5ci4")]
 transform = Transform3D(-0.677562, -0.00324755, -1.18496, -0.452673, 1.26218, 0.255381, 1.09509, 0.519732, -0.6276, 16.9456, -0.149237, -21.6571)
 
-[node name="plant_small_5" type="Node3D" parent="World/Bushes" instance=ExtResource("6_c5ci4")]
+[node name="plant_small_5" parent="World/Bushes" instance=ExtResource("6_c5ci4")]
 transform = Transform3D(1.365, 0, 0, 0, 1.365, 0, 0, 0, 1.365, 3.43422, -0.149237, -23.5522)
 
-[node name="plant_small_2" type="Node3D" parent="World/Bushes" instance=ExtResource("6_c5ci4")]
+[node name="plant_small_2" parent="World/Bushes" instance=ExtResource("6_c5ci4")]
 transform = Transform3D(0.49136, 0, 0.870957, 0, 1, 0, -0.870957, 0, 0.49136, -7.38927, 0, -27.7371)
 
 [node name="Barrels" type="Node3D" parent="World"]
@@ -282,6 +285,9 @@ visible = false
 current = true
 fov = 55.7
 script = ExtResource("7_0qa81")
+
+[node name="Rock_low" parent="." instance=ExtResource("8_ffqv0")]
+transform = Transform3D(68.3931, 0, 0, 0, 68.3931, 0, 0, 0, 68.3931, -7.80048, 2.1522, -7.44006)
 
 [editable path="World/Ground"]
 [editable path="World/Pebbles/stone_small"]
