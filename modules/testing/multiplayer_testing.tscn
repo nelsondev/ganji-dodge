@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqs66ayf8dx8a"]
-
-[ext_resource type="Script" path="res://modules/testing/multiplayer_testing.gd" id="1_5fanm"]
-
-[node name="Game" type="Node2D"]
-
-[node name="Client" type="Node2D" parent="."]
-script = ExtResource("1_5fanm")

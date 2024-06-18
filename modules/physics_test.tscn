@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b62bsvxa76s4v"]
+[gd_scene load_steps=3 format=3 uid="uid://dgmbiadkf0u12"]
 
 [ext_resource type="PackedScene" uid="uid://di1uhvjfoxmic" path="res://modules/deathball/deathball.tscn" id="1_euin4"]
 [ext_resource type="PackedScene" uid="uid://b51nkc7hv34fk" path="res://modules/testing/fake_player.tscn" id="2_lpg25"]
