@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7qbx2pcnae6e"]
+[gd_scene load_steps=4 format=3 uid="uid://c7qbx2pcnae6e"]
 
 [ext_resource type="Script" path="res://modules/player/player.gd" id="1_7cmav"]
 
@@ -6,20 +6,28 @@
 radius = 0.167
 height = 0.334
 
-[node name="Player" type="XROrigin3D"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0vdoe"]
+
+[node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_7cmav")
 
-[node name="XRCamera" type="XRCamera3D" parent="."]
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera" type="XRCamera3D" parent="XROrigin3D"]
 current = true
 
-[node name="XRLeftHand" type="XRController3D" parent="."]
+[node name="XRLeftHand" type="XRController3D" parent="XROrigin3D"]
 tracker = &"left_hand"
 
-[node name="REPLACE_THIS_HANDMODEL" type="MeshInstance3D" parent="XRLeftHand"]
+[node name="REPLACE_THIS_HANDMODEL" type="MeshInstance3D" parent="XROrigin3D/XRLeftHand"]
 mesh = SubResource("SphereMesh_be2wh")
 
-[node name="XRRightHand" type="XRController3D" parent="."]
+[node name="XRRightHand" type="XRController3D" parent="XROrigin3D"]
 tracker = &"right_hand"
 
-[node name="REPLACE_THIS_HANDMODEL" type="MeshInstance3D" parent="XRRightHand"]
+[node name="REPLACE_THIS_HANDMODEL" type="MeshInstance3D" parent="XROrigin3D/XRRightHand"]
 mesh = SubResource("SphereMesh_be2wh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_0vdoe")

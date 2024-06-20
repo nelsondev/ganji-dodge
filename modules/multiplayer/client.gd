@@ -21,7 +21,11 @@ func _ready():
 	add_child(_tick_timer)
 
 func _tick():
-	Server._sync.rpc({ "position": Game.get_player().global_position })	
+	Server._sync.rpc({ 
+		"global_position": Game.get_player().global_position,
+		"left_position": Game.get_left_controller().global_transform,
+		"right_position": Game.get_right_controller().global_transform
+	})	
 
 func _connected():
 	print("Connected!")
