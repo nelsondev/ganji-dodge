@@ -48,6 +48,6 @@ func _peer_connected(id):
 func _sync(players: Dictionary):
 	players.erase(multiplayer.get_unique_id())
 	for key in players.keys():
-		var dummy = Game.get_dummy(key)
+		var dummy = Game.get_dummy(str(key))
 		var data = players[key]
 		dummy.syncronize(data)
