@@ -3,20 +3,22 @@
 [ext_resource type="Script" path="res://modules/player/player.gd" id="1_7cmav"]
 [ext_resource type="PackedScene" uid="uid://b4b410mdm41v8" path="res://modules/player/hands.fbx" id="2_y2ocn"]
 
-[node name="Player" type="XROrigin3D"]
+[node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_7cmav")
 
-[node name="XRCamera" type="XRCamera3D" parent="."]
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera" type="XRCamera3D" parent="XROrigin3D"]
 current = true
 
-[node name="XRLeftHand" type="XRController3D" parent="."]
+[node name="XRLeftHand" type="XRController3D" parent="XROrigin3D"]
 tracker = &"left_hand"
 
-[node name="hands" parent="XRLeftHand" instance=ExtResource("2_y2ocn")]
-transform = Transform3D(-0.35, 0, -5.28485e-08, 0, 0.35, 0, 5.28485e-08, 0, -0.35, 0, 0, 0)
+[node name="hands" parent="XROrigin3D/XRLeftHand" instance=ExtResource("2_y2ocn")]
+transform = Transform3D(0.35, 3.0598e-08, 5.28485e-08, 3.0598e-08, -0.35, 4.62016e-15, 5.28485e-08, 0, -0.35, 0, 0, 0)
 
-[node name="XRRightHand" type="XRController3D" parent="."]
+[node name="XRRightHand" type="XRController3D" parent="XROrigin3D"]
 tracker = &"right_hand"
 
-[node name="hands" parent="XRRightHand" instance=ExtResource("2_y2ocn")]
-transform = Transform3D(0.365, 0, -5.51135e-08, 0, 0.365, 0, -5.51135e-08, 0, -0.365, 0, 0, 0)
+[node name="hands" parent="XROrigin3D/XRRightHand" instance=ExtResource("2_y2ocn")]
+transform = Transform3D(-0.365, -3.19093e-08, 5.51135e-08, 3.19093e-08, -0.365, -4.81817e-15, -5.51135e-08, 0, -0.365, 0, 0, 0)
