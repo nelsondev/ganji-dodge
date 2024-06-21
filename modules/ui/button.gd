@@ -1,6 +1,8 @@
 @tool
 extends MeshInstance3D
 
+signal click
+
 @export_category("Button")
 @export var text = "BUTTON":
 	set(value):
@@ -8,14 +10,12 @@ extends MeshInstance3D
 		$SubViewport/Label.text = text
 	get():
 		return text
-@export var background_color: Color = Color.WHITE:
-	set(value):
-		background_color = value
-		$SubViewport/Label.get_theme_stylebox("normal").bg_color = background_color
-	get():
-		return background_color
 @export var font_color: Color = Color.BLACK:
 	set(value):
 		font_color = value
 		$SubViewport/Label.set("theme_override_colors/font_color", font_color)
-	
+@export var stylebox: StyleBox = StyleBoxFlat.new():
+	set(value):
+		$SubViewport/Label.set("theme_override_styles/normal", value)
+	get():
+		return $SubViewport/Label.get("theme_override_styles/normal")
