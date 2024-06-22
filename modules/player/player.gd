@@ -4,6 +4,11 @@ class_name Player
 const SPEED = 4.5
 
 func _physics_process(delta: float) -> void:
+	_movement()
+
+func _movement():
+	if $Interface.visible: return
+	
 	var input_dir = Input.get_vector("player_left", "player_right", "player_up", "player_down")
 	if input_dir.is_zero_approx():
 		input_dir = $XROrigin3D/XRLeftHand.get_vector2("primary")
@@ -21,12 +26,3 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-
-func _on_xr_left_hand_button_pressed(name: String) -> void:
-	if name == "menu_button":
-		if $Interface.visible:
-			$Interface/AnimationPlayer.play("close")
-		else:
-			$Interface/AnimationPlayer.play("open")
-			$Interface.global_position = $XROrigin3D/XRCamera/InterfaceMarker.global_position
-			$Interface.look_at($XROrigin3D/XRCamera.global_position)
