@@ -21,3 +21,12 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func _on_xr_left_hand_button_pressed(name: String) -> void:
+	if name == "menu_button":
+		if $Interface.visible:
+			$Interface/AnimationPlayer.play("close")
+		else:
+			$Interface/AnimationPlayer.play("open")
+			$Interface.global_position = $XROrigin3D/XRCamera/InterfaceMarker.global_position
+			$Interface.look_at($XROrigin3D/XRCamera.global_position)

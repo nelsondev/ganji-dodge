@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdw4a1mmkw82v"]
+
+[ext_resource type="ArrayMesh" uid="uid://d0ixhlmwkq5ct" path="res://modules/ui/menu.obj" id="1_a17nk"]
+[ext_resource type="PackedScene" uid="uid://crnp3yfmb4lia" path="res://modules/ui/multiplayer_ui.tscn" id="3_0jarn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1wiia"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.682353)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lrkdf"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8f5u"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 1.0
+alpha_antialiasing_mode = 0
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+albedo_texture = SubResource("ViewportTexture_lrkdf")
+texture_filter = 4
+texture_repeat = false
+
+[node name="Interface" type="Node3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1, 0)
+
+[node name="UiPanel" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.99382e-08, -6.03983e-08, -0.8, 0.8, -3.49691e-08, -6.99382e-08, -3.49691e-08, -0.8, 6.03983e-08, 0, 0, 0)
+mesh = ExtResource("1_a17nk")
+surface_material_override/0 = SubResource("StandardMaterial3D_1wiia")
+
+[node name="Ui" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.8628e-15, -3.49691e-08, 0.8, -0.8, 6.03983e-08, 1.05029e-14, -6.03983e-08, -0.8, -3.49691e-08, -9.04674e-10, 0, -0.0103483)
+mesh = ExtResource("1_a17nk")
+surface_material_override/0 = SubResource("StandardMaterial3D_y8f5u")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(1024, 1024)
+render_target_update_mode = 4
+
+[node name="CanvasLayer" parent="SubViewport" instance=ExtResource("3_0jarn")]
