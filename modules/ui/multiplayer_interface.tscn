@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdw4a1mmkw82v"]
+[gd_scene load_steps=29 format=3 uid="uid://bdw4a1mmkw82v"]
 
 [ext_resource type="Script" path="res://modules/ui/multiplayer_interface.gd" id="1_1bt5p"]
 [ext_resource type="ArrayMesh" uid="uid://d0ixhlmwkq5ct" path="res://modules/ui/menu.obj" id="1_a17nk"]
 [ext_resource type="PackedScene" uid="uid://crnp3yfmb4lia" path="res://modules/ui/multiplayer_ui.tscn" id="3_0jarn"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1wiia"]
-transparency = 1
-shading_mode = 0
-albedo_color = Color(1, 1, 1, 0.682353)
+[ext_resource type="Material" uid="uid://44446oym0s8v" path="res://modules/ui/multiplayer_interface.tres" id="3_2j8od"]
+[ext_resource type="AudioStream" uid="uid://nmu4t750ggle" path="res://modules/ui/sound_open.mp3" id="4_awp3c"]
+[ext_resource type="ArrayMesh" uid="uid://d4hy5bximjrco" path="res://modules/ui/menu_square.obj" id="4_kcql6"]
+[ext_resource type="AudioStream" uid="uid://bhx8gt4gdolhl" path="res://modules/ui/sound_close.mp3" id="5_kpdgn"]
+[ext_resource type="Texture2D" uid="uid://bbgplukyxn5tw" path="res://modules/ui/loading-custom.png" id="5_l4oy3"]
+[ext_resource type="Texture2D" uid="uid://vr8dq8smq7r4" path="res://modules/ui/message-alert-custom.png" id="6_cmmee"]
+[ext_resource type="AudioStream" uid="uid://woib8hsuofk5" path="res://modules/ui/sound_navigate_4.mp3" id="6_dmcc4"]
+[ext_resource type="AudioStream" uid="uid://bpg1ohhxucei1" path="res://modules/ui/music.mp3" id="6_euyoo"]
+[ext_resource type="Texture2D" uid="uid://dikjp3tuew71j" path="res://modules/ui/failed.png" id="7_6npx4"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_lrkdf"]
 viewport_path = NodePath("SubViewport")
@@ -24,19 +28,278 @@ albedo_texture = SubResource("ViewportTexture_lrkdf")
 texture_filter = 4
 texture_repeat = false
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4nlf"]
+transparency = 1
+albedo_texture = ExtResource("5_l4oy3")
+
+[sub_resource type="Animation" id="Animation_25aq7"]
+resource_name = "rotate"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(3.55271e-15, 0, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xv31o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.55271e-15, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ian6f"]
+_data = {
+"RESET": SubResource("Animation_xv31o"),
+"rotate": SubResource("Animation_25aq7")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1igwi"]
+transparency = 1
+albedo_texture = ExtResource("6_cmmee")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yuvgo"]
+transparency = 1
+albedo_texture = ExtResource("7_6npx4")
+
+[sub_resource type="Animation" id="Animation_cimsk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UiPanel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_n4bkd"]
+resource_name = "flow"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UiPanel:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4995, 1.4985),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.02, 0.02, 0), Vector3(-0.01, 0.02, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1lcqm"]
+_data = {
+"RESET": SubResource("Animation_cimsk"),
+"flow": SubResource("Animation_n4bkd")
+}
+
+[sub_resource type="Animation" id="Animation_avg5h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OpenSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CloseSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_tyrg0"]
+resource_name = "close"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666, 0.1998),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 1.1, 1), Vector3(1, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CloseSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2997),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_jniqk"]
+resource_name = "open"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0999, 0.2997),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 0, 1), Vector3(1, 1.1, 1), Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OpenSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_25qdn"]
+_data = {
+"RESET": SubResource("Animation_avg5h"),
+"close": SubResource("Animation_tyrg0"),
+"open": SubResource("Animation_jniqk")
+}
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_y6o7l"]
+
 [node name="Interface" type="Node3D"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1, 0)
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 1, 0)
 script = ExtResource("1_1bt5p")
 
 [node name="UiPanel" type="MeshInstance3D" parent="."]
 transform = Transform3D(-6.99382e-08, -6.03983e-08, -0.8, 0.8, -3.49691e-08, -6.99382e-08, -3.49691e-08, -0.8, 6.03983e-08, 0, 0, 0)
 mesh = ExtResource("1_a17nk")
-surface_material_override/0 = SubResource("StandardMaterial3D_1wiia")
+surface_material_override/0 = ExtResource("3_2j8od")
 
 [node name="Ui" type="MeshInstance3D" parent="."]
 transform = Transform3D(7.8628e-15, -3.49691e-08, 0.8, -0.8, 6.03983e-08, 1.05029e-14, -6.03983e-08, -0.8, -3.49691e-08, -9.04674e-10, 0, -0.0103483)
 mesh = ExtResource("1_a17nk")
 surface_material_override/0 = SubResource("StandardMaterial3D_y8f5u")
+
+[node name="UiLoading" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.195, -2.94442e-08, -1.28705e-15, 0, -8.52372e-09, 0.195, -2.94442e-08, -0.195, -8.52372e-09, -1.22525e-08, 0, -0.0811449)
+mesh = ExtResource("4_kcql6")
+surface_material_override/0 = ExtResource("3_2j8od")
+
+[node name="UiLoading2" type="MeshInstance3D" parent="UiLoading"]
+transform = Transform3D(0.425, 0, 0, 0, 0.425, -1.5099e-15, 0, 1.5099e-15, 0.425, 0, 0.177745, 0)
+mesh = ExtResource("4_kcql6")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_s4nlf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UiLoading/UiLoading2"]
+libraries = {
+"": SubResource("AnimationLibrary_ian6f")
+}
+autoplay = "rotate"
+
+[node name="UiFailed" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.90736e-08, -5.29492e-08, 0.325, -0.325, -1.42062e-08, 4.90736e-08, 1.42062e-08, -0.325, -5.29492e-08, -1.21285, 0.252909, 1.83135e-07)
+mesh = ExtResource("1_a17nk")
+surface_material_override/0 = ExtResource("3_2j8od")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="UiFailed"]
+transform = Transform3D(-6.55671e-09, -8.34544e-09, 0.15, -4.76797e-09, 0.15, 8.34544e-09, -0.15, -4.76797e-09, -6.55672e-09, -0.363916, 0.0520638, -0.717014)
+mesh = ExtResource("4_kcql6")
+surface_material_override/0 = SubResource("StandardMaterial3D_1igwi")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="UiFailed"]
+transform = Transform3D(-3.93403e-08, -5.00727e-08, 0.9, -2.86078e-08, 0.9, 5.00727e-08, -0.9, -2.86078e-08, -3.93403e-08, -0.0308132, 0.0520638, 0.30946)
+mesh = ExtResource("4_kcql6")
+surface_material_override/0 = SubResource("StandardMaterial3D_yuvgo")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
@@ -46,3 +309,45 @@ gui_snap_controls_to_pixels = false
 size = Vector2i(1024, 1024)
 
 [node name="CanvasLayer" parent="SubViewport" instance=ExtResource("3_0jarn")]
+
+[node name="SubViewport2" type="SubViewport" parent="."]
+size = Vector2i(1024, 1024)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1lcqm")
+}
+autoplay = "flow"
+speed_scale = 0.1
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_25qdn")
+}
+
+[node name="OpenSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_awp3c")
+volume_db = -10.0
+pitch_scale = 2.0
+max_polyphony = 2
+
+[node name="CloseSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_kpdgn")
+volume_db = -10.0
+pitch_scale = 2.0
+max_polyphony = 2
+
+[node name="NavigateSound" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamSynchronized_y6o7l")
+pitch_scale = 2.0
+max_polyphony = 4
+
+[node name="ClickSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_dmcc4")
+pitch_scale = 2.0
+max_polyphony = 4
+
+[node name="Music" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_euyoo")
+volume_db = -80.0
+autoplay = true

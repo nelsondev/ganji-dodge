@@ -1,8 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://crnp3yfmb4lia"]
+[gd_scene load_steps=20 format=3 uid="uid://crnp3yfmb4lia"]
 
 [ext_resource type="Script" path="res://modules/ui/multiplayer_ui.gd" id="1_qc3aa"]
 [ext_resource type="Texture2D" uid="uid://kqs5dfw2mkhx" path="res://modules/ui/close.svg" id="2_f2rq7"]
 [ext_resource type="Texture2D" uid="uid://cmj8kognd22en" path="res://modules/ui/server-network.svg" id="3_dl7pu"]
+[ext_resource type="Texture2D" uid="uid://dparvx040s5j0" path="res://modules/ui/menu.svg" id="3_wts2c"]
+[ext_resource type="Texture2D" uid="uid://o62tb2r7587c" path="res://modules/ui/pan-vertical.svg" id="4_iun4q"]
 
 [sub_resource type="Theme" id="Theme_4ese0"]
 Button/colors/font_color = Color(1, 1, 1, 1)
@@ -18,6 +20,18 @@ corner_radius_bottom_right = 22
 corner_radius_bottom_left = 22
 anti_aliasing = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7vd2"]
+bg_color = Color(0, 0.545098, 0.454902, 1)
+border_width_bottom = 4
+border_color = Color(0, 0.427451, 0.490196, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
+[sub_resource type="LabelSettings" id="LabelSettings_77mkv"]
+font_size = 18
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_heagb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i0ooi"]
@@ -28,6 +42,15 @@ corner_radius_bottom_right = 22
 corner_radius_bottom_left = 22
 anti_aliasing = false
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7w60"]
+bg_color = Color(0.815686, 0.309804, 0.372549, 1)
+border_width_bottom = 4
+border_color = Color(0.635294, 0.243137, 0.372549, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ruxu5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4hje"]
@@ -37,6 +60,15 @@ corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7ot1"]
+bg_color = Color(0.194349, 0.194349, 0.194349, 1)
+border_width_bottom = 4
+border_color = Color(0.111197, 0.111197, 0.111197, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ducip"]
 content_margin_left = 16.0
@@ -49,7 +81,22 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xds8x"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b76n0"]
+content_margin_left = 32.0
+content_margin_top = 8.0
+content_margin_right = 332.0
+content_margin_bottom = 8.0
+bg_color = Color(0.3808, 0.4704, 0.56, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hfac0"]
 content_margin_left = 32.0
@@ -62,34 +109,6 @@ corner_radius_top_right = 22
 corner_radius_bottom_right = 22
 corner_radius_bottom_left = 22
 anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cp2kw"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2qp5"]
-bg_color = Color(1, 1, 1, 1)
-draw_center = false
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 128
-corner_radius_top_right = 128
-corner_radius_bottom_right = 128
-corner_radius_bottom_left = 128
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogo2m"]
-bg_color = Color(1, 1, 1, 1)
-draw_center = false
-border_width_left = 12
-border_width_top = 12
-border_width_right = 12
-border_width_bottom = 12
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 128
-corner_radius_top_right = 128
-corner_radius_bottom_right = 128
-corner_radius_bottom_left = 128
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_qc3aa")
@@ -113,13 +132,23 @@ offset_left = -288.0
 offset_top = -132.218
 offset_right = -72.0
 offset_bottom = -36.218
-focus_next = NodePath("../CloseButton")
-focus_previous = NodePath("../LeaveButton")
 theme = SubResource("Theme_4ese0")
 theme_override_styles/focus = SubResource("StyleBoxFlat_3dv7q")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8so2i")
 text = "JOIN"
 icon_alignment = 2
+
+[node name="Panel" type="Label" parent="Control/JoinButton"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 68.0
+offset_right = 232.0
+offset_bottom = 108.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_i7vd2")
+text = "A"
+label_settings = SubResource("LabelSettings_77mkv")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="LeaveButton" type="Button" parent="Control"]
 layout_mode = 1
@@ -132,12 +161,22 @@ offset_left = -536.0
 offset_top = -132.218
 offset_right = -320.0
 offset_bottom = -36.218
-focus_next = NodePath("../JoinButton")
-focus_previous = NodePath("../ScrollContainer/VBoxContainer/NelsonComputerButton")
 theme = SubResource("Theme_4ese0")
 theme_override_styles/focus = SubResource("StyleBoxFlat_heagb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_i0ooi")
 text = "LEAVE"
+
+[node name="Panel" type="Label" parent="Control/LeaveButton"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 68.0
+offset_right = 232.0
+offset_bottom = 108.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7w60")
+text = "B"
+label_settings = SubResource("LabelSettings_77mkv")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CloseButton" type="Button" parent="Control"]
 layout_mode = 1
@@ -151,14 +190,27 @@ offset_top = -520.218
 offset_right = -64.0
 offset_bottom = -464.218
 scale = Vector2(1.00248, 1)
-focus_neighbor_left = NodePath("../ScrollContainer/VBoxContainer/LocalhostButton")
-focus_next = NodePath("../ScrollContainer/VBoxContainer/LocalhostButton")
-focus_previous = NodePath("../JoinButton")
 theme = SubResource("Theme_4ese0")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ruxu5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_w4hje")
 icon = ExtResource("2_f2rq7")
 icon_alignment = 1
+
+[node name="Panel" type="TextureRect" parent="Control/CloseButton"]
+layout_mode = 0
+offset_left = 31.9208
+offset_top = 32.0
+offset_right = 71.9208
+offset_bottom = 72.0
+texture = ExtResource("3_wts2c")
+stretch_mode = 3
+
+[node name="Panel" type="Panel" parent="Control/CloseButton/Panel"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_c7ot1")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control"]
 layout_mode = 0
@@ -178,12 +230,20 @@ theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_ducip")
 text = "Server"
 
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/Label"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 13.0
+offset_right = 456.0
+offset_bottom = 37.0
+texture = ExtResource("4_iun4q")
+stretch_mode = 2
+
 [node name="LocalhostButton" type="Button" parent="Control/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-focus_next = NodePath("../NelsonComputerButton")
-focus_previous = NodePath("../../../CloseButton")
+focus_next = NodePath("../GeraldButton")
 theme = SubResource("Theme_4ese0")
-theme_override_styles/focus = SubResource("StyleBoxFlat_xds8x")
+theme_override_styles/focus = SubResource("StyleBoxFlat_b76n0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hfac0")
 text = "localhost"
 alignment = 0
@@ -197,40 +257,20 @@ offset_bottom = 37.0
 texture = ExtResource("3_dl7pu")
 stretch_mode = 2
 
-[node name="NelsonComputerButton" type="Button" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="GeraldButton" type="Button" parent="Control/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-focus_next = NodePath("../../../LeaveButton")
 focus_previous = NodePath("../LocalhostButton")
 theme = SubResource("Theme_4ese0")
-theme_override_styles/focus = SubResource("StyleBoxFlat_cp2kw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_b76n0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hfac0")
-text = "gerald
-"
+text = "gerald"
 alignment = 0
-icon_alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/NelsonComputerButton"]
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/GeraldButton"]
 layout_mode = 0
 offset_left = 432.0
-offset_top = 12.0
+offset_top = 13.0
 offset_right = 456.0
-offset_bottom = 36.0
+offset_bottom = 37.0
 texture = ExtResource("3_dl7pu")
 stretch_mode = 2
-
-[node name="Cursor" type="Panel" parent="Control"]
-layout_mode = 0
-offset_left = 488.0
-offset_top = 284.0
-offset_right = 528.0
-offset_bottom = 324.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_v2qp5")
-
-[node name="Cursor2" type="Panel" parent="Control/Cursor"]
-show_behind_parent = true
-layout_mode = 0
-offset_left = -2.0
-offset_top = -2.0
-offset_right = 42.0
-offset_bottom = 42.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_ogo2m")

@@ -1,12 +1,17 @@
 extends Node
 
+signal connected
+signal connect_failed
+signal disconnected
+
 var _peer = ENetMultiplayerPeer.new()
 var _tickrate = 30
 var _tick_timer = Timer.new()
 
-func _ready():
-	
-	_peer.create_client("localhost", 5000)
+var failed = false
+
+func _connect(ip):
+	_peer.create_client(ip, 5000)
 	
 	# Setup multiplayer events
 	multiplayer.multiplayer_peer = _peer
@@ -21,6 +26,12 @@ func _ready():
 	_tick_timer.wait_time = 1.0 / _tickrate
 	_tick_timer.timeout.connect(_tick)
 	add_child(_tick_timer)
+
+func _disconnect():
+	_tick_timer.stop()
+	multiplayer.multiplayer_peer = null
+	await get_tree().create_timer(0.1).timeout
+	_disconnected()
 
 func _tick():
 	Server._sync.rpc({ 
@@ -37,12 +48,21 @@ func _tick():
 
 func _connected():
 	print("Connected!")
+	await get_tree().create_timer(0.1).timeout
+	connected.emit()
 	_tick_timer.start()
 	
 func _disconnected(): 
+	disconnected.emit()
+	for player in Game.get_players().get_children():
+		player.queue_free()
 	print("Disconnected")
 	
 func _failed():
+	await get_tree().create_timer(0.1).timeout
+	failed = true
+	connected.emit()
+	connect_failed.emit()
 	print("Failed")
 	
 func _peer_connected(id):

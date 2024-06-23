@@ -1,200 +1,78 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7qbx2pcnae6e"]
+[gd_scene load_steps=10 format=3 uid="uid://c7qbx2pcnae6e"]
 
 [ext_resource type="Script" path="res://modules/player/player.gd" id="1_7cmav"]
-[ext_resource type="PackedScene" uid="uid://b4b410mdm41v8" path="res://modules/player/hands.fbx" id="2_y2ocn"]
 [ext_resource type="PackedScene" uid="uid://bdw4a1mmkw82v" path="res://modules/ui/multiplayer_interface.tscn" id="3_qlt14"]
-[ext_resource type="AudioStream" uid="uid://nmu4t750ggle" path="res://modules/ui/sound_open.mp3" id="4_qn8jx"]
-[ext_resource type="AudioStream" uid="uid://bhx8gt4gdolhl" path="res://modules/ui/sound_close.mp3" id="5_a3wly"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="3_rb6ny"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="4_wsaqo"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="5_4qttx"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_l5x5d"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="9_mfsog"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ul1me"]
-height = 1.8
+[sub_resource type="Resource" id="Resource_pocyf"]
+script = ExtResource("9_mfsog")
+flags = 0
+move_drag = 5.0
+move_traction = 30.0
+stop_on_slope = true
+move_max_slope = 45.0
+jump_max_slope = 45.0
+jump_velocity = 3.0
+bounciness = 0.0
+bounce_threshold = 1.0
 
-[sub_resource type="Animation" id="Animation_avg5h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("OpenSound:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CloseSound:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6amoo"]
+height = 1.35
+radius = 0.38
 
-[sub_resource type="Animation" id="Animation_tyrg0"]
-resource_name = "close"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666, 0.1998),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(1, 1.1, 1), Vector3(1, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CloseSound:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.2997),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_jniqk"]
-resource_name = "open"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0999, 0.2997),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(1, 0, 1), Vector3(1, 1.1, 1), Vector3(1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("OpenSound:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_25qdn"]
-_data = {
-"RESET": SubResource("Animation_avg5h"),
-"close": SubResource("Animation_tyrg0"),
-"open": SubResource("Animation_jniqk")
-}
-
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="XROrigin3D"]
 script = ExtResource("1_7cmav")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-shape = SubResource("CapsuleShape3D_ul1me")
-
-[node name="XROrigin3D" type="XROrigin3D" parent="."]
-
-[node name="XRCamera" type="XRCamera3D" parent="XROrigin3D"]
+[node name="XRCamera" type="XRCamera3D" parent="."]
 current = true
 
-[node name="InterfaceMarker" type="Marker3D" parent="XROrigin3D/XRCamera"]
+[node name="InterfaceMarker" type="Marker3D" parent="XRCamera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
 
-[node name="XRLeftHand" type="XRController3D" parent="XROrigin3D"]
+[node name="XRLeftHand" type="XRController3D" parent="."]
 tracker = &"left_hand"
 
-[node name="hands" parent="XROrigin3D/XRLeftHand" instance=ExtResource("2_y2ocn")]
-transform = Transform3D(-0.35, 0, -5.28485e-08, 8.95288e-29, 0.35, -5.92923e-22, 5.28485e-08, -2.96462e-22, -0.35, 0, 0, 0)
-visible = false
+[node name="MovementDirect" parent="XRLeftHand" instance=ExtResource("4_wsaqo")]
+strafe = true
 
-[node name="XRRightHand" type="XRController3D" parent="XROrigin3D"]
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XRLeftHand"]
+script = ExtResource("3_rb6ny")
+grab_collision_mask = 7
+ranged_enable = false
+ranged_collision_mask = 7
+impulse_factor = 2.0
+
+[node name="XRRightHand" type="XRController3D" parent="."]
 tracker = &"right_hand"
 
-[node name="hands" parent="XROrigin3D/XRRightHand" instance=ExtResource("2_y2ocn")]
-transform = Transform3D(0.365, 6.38186e-08, -5.51135e-08, -6.38186e-08, 0.365, 9.63635e-15, -5.51135e-08, -7.62626e-22, -0.365, 0, 0, 0)
-visible = false
+[node name="MovementDirect" parent="XRRightHand" instance=ExtResource("4_wsaqo")]
+
+[node name="MovementTurn" parent="XRRightHand" instance=ExtResource("5_l5x5d")]
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XRRightHand"]
+script = ExtResource("3_rb6ny")
+grab_collision_mask = 7
+ranged_enable = false
+ranged_collision_mask = 7
+impulse_factor = 2.0
+
+[node name="PlayerBody" parent="." instance=ExtResource("5_4qttx")]
+push_rigid_bodies = false
+physics = SubResource("Resource_pocyf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.749512, 0)
+shape = SubResource("CylinderShape3D_6amoo")
 
 [node name="Interface" parent="." instance=ExtResource("3_qlt14")]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, -1.5)
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 1, 0)
 top_level = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Interface"]
-libraries = {
-"": SubResource("AnimationLibrary_25qdn")
-}
-
-[node name="OpenSound" type="AudioStreamPlayer3D" parent="Interface"]
-stream = ExtResource("4_qn8jx")
-volume_db = -10.0
-pitch_scale = 2.0
-max_polyphony = 2
-
-[node name="CloseSound" type="AudioStreamPlayer3D" parent="Interface"]
-stream = ExtResource("5_a3wly")
-volume_db = -10.0
-pitch_scale = 2.0
-max_polyphony = 2
-
-[connection signal="button_pressed" from="XROrigin3D/XRLeftHand" to="Interface" method="_on_xr_left_hand_button_pressed"]
+[connection signal="button_pressed" from="XRLeftHand" to="Interface" method="_on_xr_left_hand_button_pressed"]
+[connection signal="button_pressed" from="XRRightHand" to="Interface" method="_on_xr_right_hand_button_pressed"]
+[connection signal="closed" from="Interface" to="." method="_on_interface_closed"]
+[connection signal="opened" from="Interface" to="." method="_on_interface_opened"]
