@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://dh00b7ynct2hj"]
+[gd_scene load_steps=33 format=4 uid="uid://dh00b7ynct2hj"]
 
 [ext_resource type="PackedScene" uid="uid://c7qbx2pcnae6e" path="res://modules/player/player.tscn" id="2_06lvx"]
 [ext_resource type="LightmapGIData" uid="uid://bpnpv8cbrniw8" path="res://modules/game.lmbake" id="2_epq32"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://d038sc66v5hod" path="res://modules/world/textures/sand_gradient_1.jpg" id="5_jiw48"]
 [ext_resource type="Texture2D" uid="uid://bqvorrky2vvsb" path="res://modules/world/textures/sand_normal_1.jpg" id="6_alqba"]
 [ext_resource type="PackedScene" uid="uid://bhlmkwdr34o3i" path="res://modules/world/stone_large.gltf" id="6_p5u7y"]
-[ext_resource type="Script" path="res://modules/testing/Camera3D.gd" id="7_0qa81"]
 [ext_resource type="PackedScene" uid="uid://73ighk4dbvyc" path="res://modules/world/barrel.gltf" id="7_34rve"]
 [ext_resource type="Texture2D" uid="uid://bmgnuo38p3od8" path="res://modules/world/textures/stone_gradient_1.png" id="10_5cyj7"]
 [ext_resource type="PackedScene" uid="uid://bkd7eiw7jt5b3" path="res://modules/world/fence_post_1.gltf" id="10_rjgl5"]
@@ -296,34 +295,34 @@ mesh = SubResource("ArrayMesh_cm3de")
 script = SubResource("GDScript_v0akn")
 
 [node name="fence_post_1" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.399452, 0, 0.0209344, 0, 0.4, 0, -0.0209344, 0, -0.399452, -7.5, 0, -7.5)
+transform = Transform3D(-0.399452, 0, 0.0209344, 0, 0.58, 0, -0.0209344, 0, -0.399452, -7.5, 0, -7.5)
 
 [node name="fence_post_35" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.0279025, 0, 0.399026, 0, 0.4, 0, -0.399026, 0, -0.0279025, -7.5, 0, -3.5)
+transform = Transform3D(-0.0279025, 0, 0.399026, 0, 0.58, 0, -0.399026, 0, -0.0279025, -7.5, 0, -3.5)
 
 [node name="fence_post_37" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.0418113, 0, -0.397809, 0, 0.4, 0, 0.397809, 0, 0.0418113, -7.5, 0, -1.5)
+transform = Transform3D(0.0418113, 0, -0.397809, 0, 0.58, 0, 0.397809, 0, 0.0418113, -7.5, 0, -1.5)
 
 [node name="fence_post_2" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.0348623, 0, -0.398478, 0, 0.4, 0, 0.398478, 0, 0.0348623, -6.5, 0, -7.5)
+transform = Transform3D(0.0348623, 0, -0.398478, 0, 0.58, 0, 0.398478, 0, 0.0348623, -6.5, 0, -7.5)
 
 [node name="fence_post_10" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.0209344, 0, 0.399452, 0, 0.4, 0, -0.399452, 0, 0.0209344, 1.5, 0, -7.5)
+transform = Transform3D(0.0209344, 0, 0.399452, 0, 0.58, 0, -0.399452, 0, 0.0209344, 1.5, 0, -7.5)
 
 [node name="fence_post_12" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.396107, 0, 0.0556694, 0, 0.4, 0, -0.0556694, 0, -0.396107, 3.5, 0, -7.5)
+transform = Transform3D(-0.396107, 0, 0.0556694, 0, 0.58, 0, -0.0556694, 0, -0.396107, 3.5, 0, -7.5)
 
 [node name="fence_post_52" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.399756, 0, -0.0139598, 0, 0.4, 0, 0.0139598, 0, -0.399756, 1.5, 0, 7.5)
+transform = Transform3D(-0.399756, 0, -0.0139598, 0, 0.58, 0, 0.0139598, 0, -0.399756, 1.5, 0, 7.5)
 
 [node name="fence_post_54" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.0139597, 0, -0.399756, 0, 0.4, 0, 0.399756, 0, -0.0139597, -0.5, 0, 7.5)
+transform = Transform3D(-0.0139597, 0, -0.399756, 0, 0.58, 0, 0.399756, 0, -0.0139597, -0.5, 0, 7.5)
 
 [node name="fence_post_55" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.397809, 0, -0.0418113, 0, 0.4, 0, 0.0418113, 0, -0.397809, -1.5, 0, 7.5)
+transform = Transform3D(-0.397809, 0, -0.0418113, 0, 0.58, 0, 0.0418113, 0, -0.397809, -1.5, 0, 7.5)
 
 [node name="fence_post_56" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.399756, 0, 0.0139598, 0, 0.4, 0, -0.0139598, 0, -0.399756, -2.5, 0, 7.5)
+transform = Transform3D(-0.399756, 0, 0.0139598, 0, 0.58, 0, -0.0139598, 0, -0.399756, -2.5, 0, 7.5)
 
 [node name="Mountains" type="Node3D" parent="Backyard"]
 
@@ -384,13 +383,5 @@ transform = Transform3D(-0.48397, 0, 0.875085, 0, 1, 0, -0.875085, 0, -0.48397, 
 [node name="OmniLight3D" type="OmniLight3D" parent="Backyard/OutbackHouse"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.34372, 1.08773, -2.80291)
 light_bake_mode = 1
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.998135, 0.0610485, 0, -0.0610485, 0.998135, -0.0282135, 1.66731, -0.0220699)
-visible = false
-current = true
-fov = 55.7
-far = 500.0
-script = ExtResource("7_0qa81")
 
 [editable path="Backyard/Ground"]

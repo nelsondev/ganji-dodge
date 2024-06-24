@@ -23,7 +23,7 @@ shader_parameter/texture_normal = ExtResource("2_lew06")
 shader_parameter/texture_noise = SubResource("NoiseTexture2D_ejx0d")
 
 [resource]
-lightmap_size_hint = Vector2i(10, 10)
+lightmap_size_hint = Vector2i(2502, 2502)
 material = SubResource("ShaderMaterial_ro2jc")
 add_uv2 = true
 size = Vector2(500, 500)

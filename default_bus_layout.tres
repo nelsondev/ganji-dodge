@@ -2,15 +2,11 @@
 
 [sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_mtrr3"]
 resource_name = "Limiter"
+ceiling_db = -7.1
 
 [sub_resource type="AudioEffectStereoEnhance" id="AudioEffectStereoEnhance_e8bgl"]
 resource_name = "StereoEnhance"
 pan_pullout = 0.0
-
-[sub_resource type="AudioEffectGate" id="AudioEffectGate_iqy0o"]
-attack_ms = 1.0
-hold_ms = 500.0
-resource_name = "Gate"
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_7iyt0"]
 resource_name = "Reverb"
@@ -19,6 +15,11 @@ damping = 0.65
 spread = 0.62
 hipass = 0.1
 wet = 0.2
+
+[sub_resource type="AudioEffectGate" id="AudioEffectGate_v4m5k"]
+threshold_db = -60.0
+hold_ms = 200.0
+resource_name = "Gate"
 
 [sub_resource type="AudioEffectCapture" id="AudioEffectCapture_5s2sm"]
 resource_name = "Capture"
@@ -41,9 +42,9 @@ bus/2/effect/0/effect = SubResource("AudioEffectLimiter_mtrr3")
 bus/2/effect/0/enabled = true
 bus/2/effect/1/effect = SubResource("AudioEffectStereoEnhance_e8bgl")
 bus/2/effect/1/enabled = true
-bus/2/effect/2/effect = SubResource("AudioEffectGate_iqy0o")
+bus/2/effect/2/effect = SubResource("AudioEffectReverb_7iyt0")
 bus/2/effect/2/enabled = true
-bus/2/effect/3/effect = SubResource("AudioEffectReverb_7iyt0")
+bus/2/effect/3/effect = SubResource("AudioEffectGate_v4m5k")
 bus/2/effect/3/enabled = true
 bus/2/effect/4/effect = SubResource("AudioEffectCapture_5s2sm")
 bus/2/effect/4/enabled = true
