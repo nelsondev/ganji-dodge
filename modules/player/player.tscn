@@ -61,6 +61,7 @@ ranged_collision_mask = 7
 impulse_factor = 2.0
 
 [node name="PlayerBody" parent="." instance=ExtResource("5_4qttx")]
+player_height_max = 2.0
 push_rigid_bodies = false
 physics = SubResource("Resource_pocyf")
 
