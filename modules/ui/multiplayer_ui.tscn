@@ -265,7 +265,7 @@ focus_previous = NodePath("../LocalhostButton")
 theme = SubResource("Theme_4ese0")
 theme_override_styles/focus = SubResource("StyleBoxFlat_b76n0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hfac0")
-text = "gerald"
+text = "192.168.50.54"
 alignment = 0
 
 [node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/GeraldButton"]

@@ -4,8 +4,8 @@
 offsets = PackedFloat32Array(0.565789, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_impun"]
-seed = 543
-offset = Vector3(7469.7, 0, 6051.46)
+seed = 549
+offset = Vector3(7795.94, 0, 626.647)
 domain_warp_enabled = true
 domain_warp_amplitude = 9.175
 domain_warp_fractal_octaves = 1

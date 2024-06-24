@@ -378,7 +378,7 @@ transform = Transform3D(0.0768182, -0.0402916, 0.239793, 0.0287542, 0.251216, 0.
 [node name="stone_large6" parent="Backyard/Stones" instance=ExtResource("6_p5u7y")]
 transform = Transform3D(-0.167757, 0, -0.401351, 0, 0.435, 0, 0.401351, 0, -0.167757, -24.3109, -0.144739, -12.4168)
 
-[node name="OutbackHouse" type="Node3D" parent="Backyard" instance=ExtResource("15_rlne5")]
+[node name="OutbackHouse" parent="Backyard" instance=ExtResource("15_rlne5")]
 transform = Transform3D(-0.48397, 0, 0.875085, 0, 1, 0, -0.875085, 0, -0.48397, -8.0917, -0.0540183, 4.83283)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Backyard/OutbackHouse"]
