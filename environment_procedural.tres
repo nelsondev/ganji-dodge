@@ -1,10 +1,33 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://dklgfc0wxj07q"]
+[gd_resource type="Environment" load_steps=6 format=3 uid="uid://dklgfc0wxj07q"]
+
+[sub_resource type="Gradient" id="Gradient_degky"]
+offsets = PackedFloat32Array(0.565789, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_impun"]
+seed = 543
+offset = Vector3(4330.38, 0, 19.335)
+domain_warp_enabled = true
+domain_warp_amplitude = 9.175
+domain_warp_fractal_octaves = 1
+domain_warp_fractal_gain = 0.405
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gempq"]
+in_3d_space = true
+seamless = true
+color_ramp = SubResource("Gradient_degky")
+noise = SubResource("FastNoiseLite_impun")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tu4as"]
 sky_top_color = Color(0.213878, 0.360535, 0.98072, 1)
-sky_horizon_color = Color(0.443137, 0.588235, 0.996078, 1)
-ground_bottom_color = Color(0.443137, 0.588235, 0.996078, 1)
-ground_horizon_color = Color(0.443137, 0.588235, 0.996078, 1)
+sky_horizon_color = Color(0.706329, 0.537163, 0.782924, 1)
+sky_curve = 0.0445953
+sky_cover = SubResource("NoiseTexture2D_gempq")
+sky_cover_modulate = Color(0.393086, 0.393086, 0.393085, 1)
+ground_bottom_color = Color(0.92, 0.587267, 0.3496, 1)
+ground_horizon_color = Color(0.734682, 0.57624, 0.808964, 1)
+ground_curve = 0.165642
+sun_angle_max = 250.0
+sun_curve = 0.106066
 
 [sub_resource type="Sky" id="Sky_ef28n"]
 sky_material = SubResource("ProceduralSkyMaterial_tu4as")
@@ -22,8 +45,12 @@ sdfgi_cascade0_distance = 51.2
 sdfgi_max_distance = 102.4
 sdfgi_y_scale = 0
 fog_enabled = true
-fog_light_color = Color(0.647271, 0.522215, 0.425722, 1)
-fog_light_energy = 1.5
+fog_light_color = Color(0.65, 0.429, 0.432683, 1)
+fog_sun_scatter = 0.45
+fog_density = 0.0135
+fog_sky_affect = 0.0
+fog_height = 2.0
+fog_height_density = 0.154
 volumetric_fog_density = 0.019
 volumetric_fog_albedo = Color(0.966817, 0.660566, 0.262262, 1)
 adjustment_enabled = true

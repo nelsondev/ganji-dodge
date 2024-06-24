@@ -35,7 +35,6 @@ func _on_xr_left_hand_button_pressed(name: String) -> void:
 		if name == "menu_button": _close()
 	else:
 		if name == "menu_button": _open()
-		
 
 func _on_xr_right_hand_button_pressed(name: String) -> void:
 	if visible:
@@ -68,7 +67,8 @@ func _connect():
 	Client._connect(owner.text)
 	await Client.connected
 	loading = false
-	_close()
+	if not Client.failed:
+		_close()
 	
 func _disconnect():
 	if loading: return

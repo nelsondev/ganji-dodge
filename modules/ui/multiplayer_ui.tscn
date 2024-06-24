@@ -242,6 +242,7 @@ stretch_mode = 2
 [node name="LocalhostButton" type="Button" parent="Control/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 focus_next = NodePath("../GeraldButton")
+focus_previous = NodePath("../GeraldButton")
 theme = SubResource("Theme_4ese0")
 theme_override_styles/focus = SubResource("StyleBoxFlat_b76n0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hfac0")
@@ -259,6 +260,7 @@ stretch_mode = 2
 
 [node name="GeraldButton" type="Button" parent="Control/ScrollContainer/VBoxContainer"]
 layout_mode = 2
+focus_next = NodePath("../LocalhostButton")
 focus_previous = NodePath("../LocalhostButton")
 theme = SubResource("Theme_4ese0")
 theme_override_styles/focus = SubResource("StyleBoxFlat_b76n0")

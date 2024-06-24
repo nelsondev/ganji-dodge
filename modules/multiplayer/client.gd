@@ -51,12 +51,14 @@ func _connected():
 	await get_tree().create_timer(0.1).timeout
 	connected.emit()
 	_tick_timer.start()
+	Voip.add_voip()
 	
 func _disconnected(): 
+	print("Disconnected")
 	disconnected.emit()
 	for player in Game.get_players().get_children():
 		player.queue_free()
-	print("Disconnected")
+	Voip.remove_voip()
 	
 func _failed():
 	await get_tree().create_timer(0.1).timeout
@@ -86,3 +88,11 @@ func _sync(players: Dictionary):
 		var dummy = Game.get_dummy(str(key))
 		var data = players[key]
 		dummy.syncronize(data)
+		
+@rpc("any_peer", "reliable", "call_remote")
+func _voip(data: PackedVector2Array, buffer_size):
+	var dummy = Game.get_dummy(str(multiplayer.get_remote_sender_id()))
+	var dummy_voice = dummy.get_node("Voice") as AudioStreamPlayer3D
+	if not dummy_voice.get_stream_playback().can_push_buffer(buffer_size): return
+	for i in range(0, buffer_size):
+		dummy_voice.get_stream_playback().push_frame(data[i])
