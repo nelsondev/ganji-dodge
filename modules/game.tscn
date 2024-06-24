@@ -204,7 +204,7 @@ environment = ExtResource("2_xw1k3")
 script = SubResource("GDScript_0sjth")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.925989, -0.234416, 0.295961, -0.37755, -0.574935, 0.725883, -1.45708e-08, -0.783899, -0.620888, 0, 5.08808, 0)
+transform = Transform3D(0.804585, 0.377502, -0.458405, 0.107887, 0.666167, 0.737959, 0.583955, -0.643206, 0.49526, 0.0241661, 5.08808, -0.0765407)
 light_bake_mode = 1
 shadow_enabled = true
 shadow_bias = 0.0
@@ -217,8 +217,6 @@ directional_shadow_blend_splits = true
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00395918, 0.0290661, -0.0181217)
-quality = 0
-bounces = 1
 directional = true
 denoiser_strength = 0.3
 denoiser_range = 5
@@ -296,157 +294,157 @@ mesh = SubResource("ArrayMesh_cm3de")
 script = SubResource("GDScript_v0akn")
 
 [node name="fence_post_1" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.499315, 0, 0.026168, 0, 0.5, 0, -0.026168, 0, -0.499315, -7.5, 0, -7.5)
+transform = Transform3D(-0.399452, 0, 0.0209344, 0, 0.4, 0, -0.0209344, 0, -0.399452, -7.5, 0, -7.5)
 
 [node name="fence_post_32" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.495134, 0, 0.0695867, 0, 0.5, 0, -0.0695867, 0, -0.495134, -7.5, 0, -6.5)
+transform = Transform3D(-0.396107, 0, 0.0556694, 0, 0.4, 0, -0.0556694, 0, -0.396107, -7.5, 0, -6.5)
 
 [node name="fence_post_33" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.496273, 0, 0.0609346, 0, 0.5, 0, -0.0609346, 0, 0.496273, -7.5, 0, -5.5)
+transform = Transform3D(0.397018, 0, 0.0487477, 0, 0.4, 0, -0.0487477, 0, 0.397018, -7.5, 0, -5.5)
 
 [node name="fence_post_34" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.492404, 0, 0.0868243, 0, 0.5, 0, -0.0868243, 0, -0.492404, -7.5, 0, -4.5)
+transform = Transform3D(-0.393923, 0, 0.0694594, 0, 0.4, 0, -0.0694594, 0, -0.393923, -7.5, 0, -4.5)
 
 [node name="fence_post_35" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.0348782, 0, 0.498782, 0, 0.5, 0, -0.498782, 0, -0.0348782, -7.5, 0, -3.5)
+transform = Transform3D(-0.0279025, 0, 0.399026, 0, 0.4, 0, -0.399026, 0, -0.0279025, -7.5, 0, -3.5)
 
 [node name="fence_post_36" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.026168, 0, 0.499315, 0, 0.5, 0, -0.499315, 0, -0.026168, -7.5, 0, -2.5)
+transform = Transform3D(-0.0209344, 0, 0.399452, 0, 0.4, 0, -0.399452, 0, -0.0209344, -7.5, 0, -2.5)
 
 [node name="fence_post_37" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.0522641, 0, -0.497261, 0, 0.5, 0, 0.497261, 0, 0.0522641, -7.5, 0, -1.5)
+transform = Transform3D(0.0418113, 0, -0.397809, 0, 0.4, 0, 0.397809, 0, 0.0418113, -7.5, 0, -1.5)
 
 [node name="fence_post_38" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.492404, 0, 0.0868243, 0, 0.5, 0, -0.0868243, 0, 0.492404, -7.5, 0, -0.5)
+transform = Transform3D(0.393923, 0, 0.0694594, 0, 0.4, 0, -0.0694594, 0, 0.393923, -7.5, 0, -0.5)
 
 [node name="fence_post_39" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.495134, 0, -0.0695866, 0, 0.5, 0, 0.0695866, 0, 0.495134, -7.5, 0, 0.5)
+transform = Transform3D(0.396107, 0, -0.0556693, 0, 0.4, 0, 0.0556693, 0, 0.396107, -7.5, 0, 0.5)
 
 [node name="fence_post_40" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.497261, 0, 0.0522643, 0, 0.5, 0, -0.0522643, 0, 0.497261, -7.5, 0, 1.5)
+transform = Transform3D(0.397809, 0, 0.0418114, 0, 0.4, 0, -0.0418114, 0, 0.397809, -7.5, 0, 1.5)
 
 [node name="fence_post_41" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.499924, 0, 0.00872623, 0, 0.5, 0, -0.00872623, 0, -0.499924, -7.5, 0, 2.5)
+transform = Transform3D(-0.399939, 0, 0.00698098, 0, 0.4, 0, -0.00698098, 0, -0.399939, -7.5, 0, 2.5)
 
 [node name="fence_post_2" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.0435779, 0, -0.498097, 0, 0.5, 0, 0.498097, 0, 0.0435779, -6.5, 0, -7.5)
+transform = Transform3D(0.0348623, 0, -0.398478, 0, 0.4, 0, 0.398478, 0, 0.0348623, -6.5, 0, -7.5)
 
 [node name="fence_post_3" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.492404, 0, -0.0868243, 0, 0.5, 0, 0.0868243, 0, -0.492404, -5.5, 0, -7.5)
+transform = Transform3D(-0.393923, 0, -0.0694594, 0, 0.4, 0, 0.0694594, 0, -0.393923, -5.5, 0, -7.5)
 
 [node name="fence_post_4" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.0868241, 0, -0.492404, 0, 0.5, 0, 0.492404, 0, -0.0868241, -4.5, 0, -7.5)
+transform = Transform3D(-0.0694593, 0, -0.393923, 0, 0.4, 0, 0.393923, 0, -0.0694593, -4.5, 0, -7.5)
 
 [node name="fence_post_5" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.496273, 0, -0.0609346, 0, 0.5, 0, 0.0609346, 0, 0.496273, -3.5, 0, -7.5)
+transform = Transform3D(0.397018, 0, -0.0487477, 0, 0.4, 0, 0.0487477, 0, 0.397018, -3.5, 0, -7.5)
 
 [node name="fence_post_6" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.492404, 0, 0.0868243, 0, 0.5, 0, -0.0868243, 0, 0.492404, -2.5, 0, -7.5)
+transform = Transform3D(0.393923, 0, 0.0694594, 0, 0.4, 0, -0.0694594, 0, 0.393923, -2.5, 0, -7.5)
 
 [node name="fence_post_7" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.0522641, 0, -0.497261, 0, 0.5, 0, 0.497261, 0, -0.0522641, -1.5, 0, -7.5)
+transform = Transform3D(-0.0418113, 0, -0.397809, 0, 0.4, 0, 0.397809, 0, -0.0418113, -1.5, 0, -7.5)
 
 [node name="fence_post_8" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.499695, 0, -0.0174498, 0, 0.5, 0, 0.0174498, 0, 0.499695, -0.5, 0, -7.5)
+transform = Transform3D(0.399756, 0, -0.0139599, 0, 0.4, 0, 0.0139599, 0, 0.399756, -0.5, 0, -7.5)
 
 [node name="fence_post_9" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.497261, 0, -0.0522643, 0, 0.5, 0, 0.0522643, 0, 0.497261, 0.5, 0, -7.5)
+transform = Transform3D(0.397809, 0, -0.0418114, 0, 0.4, 0, 0.0418114, 0, 0.397809, 0.5, 0, -7.5)
 
 [node name="fence_post_10" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.026168, 0, 0.499315, 0, 0.5, 0, -0.499315, 0, 0.026168, 1.5, 0, -7.5)
+transform = Transform3D(0.0209344, 0, 0.399452, 0, 0.4, 0, -0.399452, 0, 0.0209344, 1.5, 0, -7.5)
 
 [node name="fence_post_11" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.497261, 0, 0.0522642, 0, 0.5, 0, -0.0522642, 0, -0.497261, 2.5, 0, -7.5)
+transform = Transform3D(-0.397809, 0, 0.0418114, 0, 0.4, 0, -0.0418114, 0, -0.397809, 2.5, 0, -7.5)
 
 [node name="fence_post_12" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.495134, 0, 0.0695867, 0, 0.5, 0, -0.0695867, 0, -0.495134, 3.5, 0, -7.5)
+transform = Transform3D(-0.396107, 0, 0.0556694, 0, 0.4, 0, -0.0556694, 0, -0.396107, 3.5, 0, -7.5)
 
 [node name="fence_post_13" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.0348784, 0, 0.498782, 0, 0.5, 0, -0.498782, 0, 0.0348784, 4.5, 0, -7.5)
+transform = Transform3D(0.0279027, 0, 0.399026, 0, 0.4, 0, -0.399026, 0, 0.0279027, 4.5, 0, -7.5)
 
 [node name="fence_post_14" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.496273, 0, 0.0609346, 0, 0.5, 0, -0.0609346, 0, -0.496273, 5.5, 0, -7.5)
+transform = Transform3D(-0.397018, 0, 0.0487477, 0, 0.4, 0, -0.0487477, 0, -0.397018, 5.5, 0, -7.5)
 
 [node name="fence_post_15" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.497261, 0, 0.0522643, 0, 0.5, 0, -0.0522643, 0, 0.497261, 6.5, 0, -7.5)
+transform = Transform3D(0.397809, 0, 0.0418114, 0, 0.4, 0, -0.0418114, 0, 0.397809, 6.5, 0, -7.5)
 
 [node name="fence_post_16" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.493844, 0, 0.078217, 0, 0.5, 0, -0.078217, 0, -0.493844, 7.5, 0, -7.5)
+transform = Transform3D(-0.395075, 0, 0.0625736, 0, 0.4, 0, -0.0625736, 0, -0.395075, 7.5, 0, -7.5)
 
 [node name="fence_post_17" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.0782172, 0, 0.493844, 0, 0.5, 0, -0.493844, 0, 0.0782172, 7.5, 0, -6.5)
+transform = Transform3D(0.0625738, 0, 0.395075, 0, 0.4, 0, -0.395075, 0, 0.0625738, 7.5, 0, -6.5)
 
 [node name="fence_post_18" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.495134, 0, 0.0695867, 0, 0.5, 0, -0.0695867, 0, -0.495134, 7.5, 0, -5.5)
+transform = Transform3D(-0.396107, 0, 0.0556694, 0, 0.4, 0, -0.0556694, 0, -0.396107, 7.5, 0, -5.5)
 
 [node name="fence_post_19" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.0695866, 0, 0.495134, 0, 0.5, 0, -0.495134, 0, -0.0695866, 7.5, 0, -4.5)
+transform = Transform3D(-0.0556693, 0, 0.396107, 0, 0.4, 0, -0.396107, 0, -0.0556693, 7.5, 0, -4.5)
 
 [node name="fence_post_20" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.0522641, 0, 0.497261, 0, 0.5, 0, -0.497261, 0, 0.0522641, 7.5, 0, -3.5)
+transform = Transform3D(0.0418113, 0, 0.397809, 0, 0.4, 0, -0.397809, 0, 0.0418113, 7.5, 0, -3.5)
 
 [node name="fence_post_21" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.0522643, 0, 0.497261, 0, 0.5, 0, -0.497261, 0, -0.0522643, 7.5, 0, -2.5)
+transform = Transform3D(-0.0418114, 0, 0.397809, 0, 0.4, 0, -0.397809, 0, -0.0418114, 7.5, 0, -2.5)
 
 [node name="fence_post_22" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.499695, 0, -0.0174497, 0, 0.5, 0, 0.0174497, 0, -0.499695, 7.5, 0, -1.5)
+transform = Transform3D(-0.399756, 0, -0.0139598, 0, 0.4, 0, 0.0139598, 0, -0.399756, 7.5, 0, -1.5)
 
 [node name="fence_post_23" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.498782, 0, -0.0348782, 0, 0.5, 0, 0.0348782, 0, -0.498782, 7.5, 0, -0.5)
+transform = Transform3D(-0.399026, 0, -0.0279026, 0, 0.4, 0, 0.0279026, 0, -0.399026, 7.5, 0, -0.5)
 
 [node name="fence_post_24" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.0522641, 0, -0.497261, 0, 0.5, 0, 0.497261, 0, 0.0522641, 7.5, 0, 0.5)
+transform = Transform3D(0.0418113, 0, -0.397809, 0, 0.4, 0, 0.397809, 0, 0.0418113, 7.5, 0, 0.5)
 
 [node name="fence_post_25" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.026168, 0, 0.499315, 0, 0.5, 0, -0.499315, 0, 0.026168, 7.5, 0, 1.5)
+transform = Transform3D(0.0209344, 0, 0.399452, 0, 0.4, 0, -0.399452, 0, 0.0209344, 7.5, 0, 1.5)
 
 [node name="fence_post_26" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.495134, 0, -0.0695866, 0, 0.5, 0, 0.0695866, 0, -0.495134, 7.5, 0, 2.5)
+transform = Transform3D(-0.396107, 0, -0.0556693, 0, 0.4, 0, 0.0556693, 0, -0.396107, 7.5, 0, 2.5)
 
 [node name="fence_post_27" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.496273, 0, -0.0609346, 0, 0.5, 0, 0.0609346, 0, 0.496273, 7.5, 0, 3.5)
+transform = Transform3D(0.397018, 0, -0.0487477, 0, 0.4, 0, 0.0487477, 0, 0.397018, 7.5, 0, 3.5)
 
 [node name="fence_post_28" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.026168, 0, 0.499315, 0, 0.5, 0, -0.499315, 0, -0.026168, 7.5, 0, 4.5)
+transform = Transform3D(-0.0209344, 0, 0.399452, 0, 0.4, 0, -0.399452, 0, -0.0209344, 7.5, 0, 4.5)
 
 [node name="fence_post_29" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.498097, 0, -0.0435779, 0, 0.5, 0, 0.0435779, 0, -0.498097, 7.5, 0, 5.5)
+transform = Transform3D(-0.398478, 0, -0.0348624, 0, 0.4, 0, 0.0348624, 0, -0.398478, 7.5, 0, 5.5)
 
 [node name="fence_post_30" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.0782171, 0, 0.493844, 0, 0.5, 0, -0.493844, 0, -0.0782171, 7.5, 0, 6.5)
+transform = Transform3D(-0.0625736, 0, 0.395075, 0, 0.4, 0, -0.395075, 0, -0.0625736, 7.5, 0, 6.5)
 
 [node name="fence_post_31" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.493844, 0, -0.078217, 0, 0.5, 0, 0.078217, 0, 0.493844, 7.5, 0, 7.5)
+transform = Transform3D(0.395075, 0, -0.0625736, 0, 0.4, 0, 0.0625736, 0, 0.395075, 7.5, 0, 7.5)
 
 [node name="fence_post_47" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.497261, 0, -0.0522643, 0, 0.5, 0, 0.0522643, 0, 0.497261, 6.5, 0, 7.5)
+transform = Transform3D(0.397809, 0, -0.0418114, 0, 0.4, 0, 0.0418114, 0, 0.397809, 6.5, 0, 7.5)
 
 [node name="fence_post_48" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.499695, 0, 0.0174497, 0, 0.5, 0, -0.0174497, 0, -0.499695, 5.5, 0, 7.5)
+transform = Transform3D(-0.399756, 0, 0.0139598, 0, 0.4, 0, -0.0139598, 0, -0.399756, 5.5, 0, 7.5)
 
 [node name="fence_post_49" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 4.5, 0, 7.5)
+transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 4.5, 0, 7.5)
 
 [node name="fence_post_50" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.026168, 0, 0.499315, 0, 0.5, 0, -0.499315, 0, -0.026168, 3.5, 0, 7.5)
+transform = Transform3D(-0.0209344, 0, 0.399452, 0, 0.4, 0, -0.399452, 0, -0.0209344, 3.5, 0, 7.5)
 
 [node name="fence_post_51" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(0.496273, 0, -0.0609346, 0, 0.5, 0, 0.0609346, 0, 0.496273, 2.5, 0, 7.5)
+transform = Transform3D(0.397018, 0, -0.0487477, 0, 0.4, 0, 0.0487477, 0, 0.397018, 2.5, 0, 7.5)
 
 [node name="fence_post_52" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.499695, 0, -0.0174497, 0, 0.5, 0, 0.0174497, 0, -0.499695, 1.5, 0, 7.5)
+transform = Transform3D(-0.399756, 0, -0.0139598, 0, 0.4, 0, 0.0139598, 0, -0.399756, 1.5, 0, 7.5)
 
 [node name="fence_post_53" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.0782175, 0, -0.493844, 0, 0.5, 0, 0.493844, 0, -0.0782175, 0.5, 0, 7.5)
+transform = Transform3D(-0.062574, 0, -0.395075, 0, 0.4, 0, 0.395075, 0, -0.062574, 0.5, 0, 7.5)
 
 [node name="fence_post_54" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.0174497, 0, -0.499695, 0, 0.5, 0, 0.499695, 0, -0.0174497, -0.5, 0, 7.5)
+transform = Transform3D(-0.0139597, 0, -0.399756, 0, 0.4, 0, 0.399756, 0, -0.0139597, -0.5, 0, 7.5)
 
 [node name="fence_post_55" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.497261, 0, -0.0522641, 0, 0.5, 0, 0.0522641, 0, -0.497261, -1.5, 0, 7.5)
+transform = Transform3D(-0.397809, 0, -0.0418113, 0, 0.4, 0, 0.0418113, 0, -0.397809, -1.5, 0, 7.5)
 
 [node name="fence_post_56" parent="Backyard/Fences" instance=ExtResource("10_rjgl5")]
-transform = Transform3D(-0.499695, 0, 0.0174497, 0, 0.5, 0, -0.0174497, 0, -0.499695, -2.5, 0, 7.5)
+transform = Transform3D(-0.399756, 0, 0.0139598, 0, 0.4, 0, -0.0139598, 0, -0.399756, -2.5, 0, 7.5)
 
 [node name="Mountains" type="Node3D" parent="Backyard"]
 
