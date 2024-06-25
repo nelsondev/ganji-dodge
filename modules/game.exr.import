@@ -2,7 +2,7 @@
 
 importer="2d_array_texture"
 type="CompressedTexture2DArray"
-uid="uid://c7koku37puel0"
+uid="uid://ciyv3ygbdqdrt"
 path="res://.godot/imported/game.exr-d91673147cfabe6d31458a8f0bf08a4e.ctexarray"
 metadata={
 "vram_texture": false
@@ -23,4 +23,4 @@ compress/channel_pack=1
 mipmaps/generate=false
 mipmaps/limit=-1
 slices/horizontal=1
-slices/vertical=8
+slices/vertical=4

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ml2w4ensg2ex"
-path="res://.godot/imported/Rock_low.fbx-e10bc4bb0dd9c8af43329220a7e393f3.scn"
+uid="uid://d168d3p1gxlr4"
+path="res://.godot/imported/House.fbx-e12c87e0e9e267b9f902b382880b655b.scn"
 
 [deps]
 
-source_file="res://modules/world/Rocks/Rock_low.fbx"
-dest_files=["res://.godot/imported/Rock_low.fbx-e10bc4bb0dd9c8af43329220a7e393f3.scn"]
+source_file="res://modules/world/house/House.fbx"
+dest_files=["res://.godot/imported/House.fbx-e12c87e0e9e267b9f902b382880b655b.scn"]
 
 [params]
 
@@ -24,8 +24,8 @@ meshes/create_shadow_meshes=true
 meshes/light_baking=2
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
-skins/use_named_skins=true
-animation/import=true
+skins/use_named_skins=false
+animation/import=false
 animation/fps=30
 animation/trimming=true
 animation/remove_immutable_tracks=true
@@ -33,14 +33,14 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"standardSurface2": {
-"use_external/enabled": true,
-"use_external/path": "res://modules/world/Rocks/Rock.tres"
+"standardSurface5": {
+"use_external/enabled": false,
+"use_external/path": "res://modules/world/house/interior.tres"
 }
 }
 }
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
+fbx/embedded_image_handling=2
 gltf/naming_version=1
 gltf/embedded_image_handling=1

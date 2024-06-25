@@ -28,16 +28,20 @@ ground_horizon_color = Color(0.734682, 0.57624, 0.808964, 1)
 ground_curve = 0.165642
 sun_angle_max = 250.0
 sun_curve = 0.106066
+use_debanding = false
 
 [sub_resource type="Sky" id="Sky_ef28n"]
 sky_material = SubResource("ProceduralSkyMaterial_tu4as")
+radiance_size = 0
 
 [resource]
 background_mode = 2
 sky = SubResource("Sky_ef28n")
 ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.0
 reflected_light_source = 2
-tonemap_mode = 3
+tonemap_mode = 2
 ssao_radius = 15.2
 ssao_intensity = 8.45
 sdfgi_cascades = 1
@@ -47,9 +51,11 @@ sdfgi_max_distance = 102.4
 sdfgi_y_scale = 0
 fog_enabled = true
 fog_light_color = Color(0.384341, 0.139742, 0.229857, 1)
-fog_light_energy = 1.5
+fog_light_energy = 1.45
+fog_sun_scatter = 0.25
+fog_density = 0.009
+fog_sky_affect = 0.0
 fog_height = 1.0
 fog_height_density = 0.1245
 volumetric_fog_density = 0.019
 volumetric_fog_albedo = Color(0.966817, 0.660566, 0.262262, 1)
-adjustment_enabled = true
