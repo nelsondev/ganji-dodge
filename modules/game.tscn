@@ -91,7 +91,7 @@ current = true
 
 [node name="Backyard" type="Node3D" parent="."]
 
-[node name="landscape" type="Node3D" parent="Backyard" instance=ExtResource("8_m6hl7")]
+[node name="landscape" parent="Backyard" instance=ExtResource("8_m6hl7")]
 
 [node name="landscape_center" parent="Backyard" instance=ExtResource("7_mrh63")]
 
