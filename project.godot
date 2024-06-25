@@ -90,6 +90,12 @@ player_down={
 ]
 }
 
+[physics]
+
+common/physics_ticks_per_second=120
+common/max_physics_steps_per_frame=30
+common/physics_interpolation=true
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=2
@@ -107,8 +113,7 @@ anti_aliasing/physics_ticks_per_second=144
 [xr]
 
 openxr/enabled=true
-openxr/foveation_level=3
-openxr/foveation_dynamic=true
+openxr/foveation_level=1
 openxr/startup_alert=false
 openxr/extensions/hand_tracking=false
 shaders/enabled=true

@@ -1,6 +1,6 @@
 {
 	"asset":{
-		"generator":"Khronos glTF Blender I/O v4.0.44",
+		"generator":"Khronos glTF Blender I/O v4.1.63",
 		"version":"2.0"
 	},
 	"scene":0,
@@ -54,9 +54,9 @@
 	],
 	"images":[
 		{
-			"mimeType":"image/png",
-			"name":"stone_gradient_1",
-			"uri":"textures/stone_gradient_1.png"
+			"mimeType":"image/jpeg",
+			"name":"sand_gradient_1",
+			"uri":"textures/sand_gradient_1.jpg"
 		}
 	],
 	"accessors":[

@@ -5,7 +5,7 @@ offsets = PackedFloat32Array(0.565789, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_impun"]
 seed = 366
-offset = Vector3(7855.12, 0, 63.3432)
+offset = Vector3(7924.73, 0, 196.988)
 domain_warp_enabled = true
 domain_warp_amplitude = 9.175
 domain_warp_fractal_octaves = 1
@@ -45,8 +45,10 @@ sdfgi_cascade0_distance = 51.2
 sdfgi_max_distance = 102.4
 sdfgi_y_scale = 0
 fog_enabled = true
-fog_light_color = Color(0.685006, 0.460282, 0.463658, 1)
-fog_height_density = 0.9282
+fog_light_color = Color(0.384341, 0.139742, 0.229857, 1)
+fog_light_energy = 1.5
+fog_height = 1.0
+fog_height_density = 0.1245
 volumetric_fog_density = 0.019
 volumetric_fog_albedo = Color(0.966817, 0.660566, 0.262262, 1)
 adjustment_enabled = true
