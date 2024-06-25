@@ -65,6 +65,8 @@ environment = ExtResource("2_xw1k3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.190665, 0.671031, 0.716495, -0.224895, -0.680613, 0.697272, 0.955547, -0.294081, 0.0211421, 0.0241661, 5.08808, -0.0765407)
+light_volumetric_fog_energy = 0.0
+light_angular_distance = 3.88
 light_bake_mode = 1
 shadow_bias = 0.0
 shadow_normal_bias = 0.0
@@ -91,7 +93,7 @@ current = true
 
 [node name="Backyard" type="Node3D" parent="."]
 
-[node name="landscape" parent="Backyard" instance=ExtResource("8_m6hl7")]
+[node name="landscape" type="Node3D" parent="Backyard" instance=ExtResource("8_m6hl7")]
 
 [node name="landscape_center" parent="Backyard" instance=ExtResource("7_mrh63")]
 
@@ -104,16 +106,16 @@ visible = false
 shape = SubResource("ConcavePolygonShape3D_htdka")
 
 [node name="OutbackHouse" parent="Backyard" instance=ExtResource("15_rlne5")]
-transform = Transform3D(-0.48397, 0, 0.875085, 0, 1, 0, -0.875085, 0, -0.48397, -12.2177, -0.0540183, 5.60859)
+transform = Transform3D(-0.568289, 0, 0.822829, 0, 1, 0, -0.822829, 0, -0.568289, -12.7391, -0.0540188, 8.80977)
 
 [node name="Houses" type="Node3D" parent="Backyard"]
 
 [node name="Mountains" type="Node3D" parent="Backyard"]
 
-[node name="mountain4" parent="Backyard/Mountains" instance=ExtResource("17_5l2e1")]
+[node name="mountain4" type="Node3D" parent="Backyard/Mountains" instance=ExtResource("17_5l2e1")]
 transform = Transform3D(-11.9204, -0.227119, 3.23962, -0.532486, 6.4649, -0.524713, -2.61293, -0.281343, -14.6724, 325.583, -9.46623, 48.2623)
 
-[node name="mountain5" parent="Backyard/Mountains" instance=ExtResource("17_5l2e1")]
+[node name="mountain5" type="Node3D" parent="Backyard/Mountains" instance=ExtResource("17_5l2e1")]
 transform = Transform3D(1.23289, -0.0413549, -8.21613, -0.207066, 1.84212, -0.296995, 4.58254, 0.0943641, 2.19705, 51.2755, -1.56409, 246.777)
 
 [node name="Rocks" type="MultiMeshInstance3D" parent="Backyard"]

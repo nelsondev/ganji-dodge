@@ -18,11 +18,11 @@ color_ramp = SubResource("Gradient_degky")
 noise = SubResource("FastNoiseLite_impun")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tu4as"]
-sky_top_color = Color(0.213878, 0.360535, 0.98072, 1)
-sky_horizon_color = Color(0.706329, 0.537163, 0.782924, 1)
-sky_curve = 0.0445953
+sky_top_color = Color(0.0781, 0.299265, 0.71, 1)
+sky_horizon_color = Color(0.733333, 0.576471, 0.807843, 1)
+sky_curve = 0.0750001
 sky_cover = SubResource("NoiseTexture2D_gempq")
-sky_cover_modulate = Color(0.393086, 0.393086, 0.393085, 1)
+sky_cover_modulate = Color(0.47, 0.47, 0.47, 1)
 ground_bottom_color = Color(0.92, 0.587267, 0.3496, 1)
 ground_horizon_color = Color(0.734682, 0.57624, 0.808964, 1)
 ground_curve = 0.165642
@@ -35,6 +35,7 @@ sky_material = SubResource("ProceduralSkyMaterial_tu4as")
 [resource]
 background_mode = 2
 sky = SubResource("Sky_ef28n")
+ambient_light_source = 3
 reflected_light_source = 2
 tonemap_mode = 3
 ssao_radius = 15.2
