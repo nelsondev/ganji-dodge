@@ -11,14 +11,23 @@ config_version=5
 [application]
 
 config/name="ganji-server"
-run/main_scene="res://node.tscn"
+config/tags=PackedStringArray("server")
+run/main_scene="res://server.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 
 Server="*res://server.gd"
 Client="*res://client.gd"
+Config="*res://config.gd"
+
+[display]
+
+display_server/driver.windows="headless"
+display_server/driver.linuxbsd="headless"
+display_server/driver.android="headless"
+display_server/driver.ios="headless"
+display_server/driver.macos="headless"
 
 [physics]
 
